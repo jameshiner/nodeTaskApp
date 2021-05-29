@@ -3,9 +3,7 @@ TODO
 
 # user added
 notes.json
-keys.js
-dev.env
-test.env
+dev.js
 
 # Logs
 logs

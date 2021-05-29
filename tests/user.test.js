@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const app = require('../src/app');
 const User = require('../src/models/User');
 
+const { jwtSecret } = require('./config/keys');
+
 const testUserOneID = new mongoose.Types.ObjectId();
 const testUserOne = {
   _id: testUserOneID,
@@ -11,7 +13,7 @@ const testUserOne = {
   email: 'mike@example.xyz',
   password: '56What!!',
   tokens: [{
-    token: jwt.sign({ _id: testUserOneID }, process.env.JWT_SECRET),
+    token: jwt.sign({ _id: testUserOneID }, jwtSecret),
   }],
 };
 

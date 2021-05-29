@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
+const { mongoURI } = require('../../config/keys');
 
-const { DB_CONNECTION_URL, DB_NAME } = process.env;
-
-mongoose.connect(DB_CONNECTION_URL + DB_NAME, {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
